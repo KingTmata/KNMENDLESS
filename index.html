@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMap AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🌱 <span>GreenMap AI</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="map.html">Điểm thu gom</a></li>
+                <li><a href="phanloai.html">Phân loại rác</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="kienthuc.html">Kiến thức</a></li>
+            </ul>
+
+            <a href="map.html" class="btn">Tra cứu ngay</a>
+
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero scroll-animate fade-up">
+
+        <div class="hero-left">
+
+            <p class="tag hero-animate-1">🌿 Nền tảng bảo vệ môi trường</p>
+
+            <h1>
+                <span class="hero-animate-2">Sống xanh <br> bắt đầu từ <br></span>
+                <span class="hero-animate-3" style="color:#333;">hành động nhỏ</span>
+            </h1>
+
+            <p class="hero-animate-4">
+                GreenMap AI giúp bạn tìm điểm thu gom,
+                phân loại rác và bảo vệ môi trường dễ dàng hơn.
+            </p>
+
+            
+
+        </div>
+
+        <div class="hero-right hero-animate-5">
+
+            <video id="earthVideo" muted playsinline preload="auto" poster="assets/images/earth-removebg-preview.png">
+                <source src="assets/videos/earth-video.mp4" type="video/mp4">
+            </video>
+            <img src="assets/images/earth-removebg-preview.png" alt="Green Earth" id="earthImage" style="display:none;">
+
+        </div>
+
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features scroll-animate fade-up">
+
+        <h2>Tính năng nổi bật</h2>
+
+        <div class="feature-grid">
+
+            <a href="map.html" class="card-link scroll-animate fade-left scroll-delay-1">
+                <div class="card">
+                    <h1>📍</h1>
+                    <h3>Tìm điểm thu gom</h3>
+                    <p>Hiển thị vị trí các điểm thu gom rác tái chế gần bạn.</p>
+                </div>
+            </a>
+
+            <a href="phanloai.html" class="card-link scroll-animate fade-up scroll-delay-2">
+                <div class="card">
+                    <h1>♻️</h1>
+                    <h3>Phân loại rác</h3>
+                    <p>Hướng dẫn phân loại rác đúng cách và thân thiện với môi trường.</p>
+                </div>
+            </a>
+
+            <a href="chatbot.html" class="card-link scroll-animate fade-right scroll-delay-3">
+                <div class="card">
+                    <h1>🤖</h1>
+                    <h3>AI Chatbot</h3>
+                    <p>Giải đáp nhanh các câu hỏi về môi trường và tái chế.</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+    <section class="stats scroll-animate fade-up">
+
+    <h2>Vì sao chọn GreenMap AI?</h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-card scroll-animate fade-left scroll-delay-1">
+            <h1>100+</h1>
+            <p>Điểm thu gom</p>
+        </div>
+
+        <div class="stat-card scroll-animate fade-up scroll-delay-2">
+            <h1>24/7</h1>
+            <p>AI hỗ trợ</p>
+        </div>
+
+        <div class="stat-card scroll-animate fade-up scroll-delay-3">
+            <h1>100+</h1>
+            <p>Người dùng</p>
+        </div>
+
+        <div class="stat-card scroll-animate fade-right scroll-delay-4">
+            <h1>4</h1>
+            <p>Chức năng chính</p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ===== SCROLL ANIMATION SCRIPT ===== -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+        // Hero text animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const els = document.querySelectorAll('.hero-animate-1, .hero-animate-2, .hero-animate-3, .hero-animate-4, .hero-animate-5');
+        els.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            setTimeout(() => {
+                document.querySelector('.hero-animate-1').style.opacity = '1';
+                document.querySelector('.hero-animate-1').style.transform = 'translateY(0)';
+            }, 200);
+            setTimeout(() => {
+                document.querySelector('.hero-animate-2').style.opacity = '1';
+                document.querySelector('.hero-animate-2').style.transform = 'translateY(0)';
+            }, 500);
+            setTimeout(() => {
+                document.querySelector('.hero-animate-3').style.opacity = '1';
+                document.querySelector('.hero-animate-3').style.transform = 'translateY(0)';
+            }, 800);
+            setTimeout(() => {
+                document.querySelector('.hero-animate-4').style.opacity = '1';
+                document.querySelector('.hero-animate-4').style.transform = 'translateY(0)';
+            }, 1100);
+            setTimeout(() => {
+                document.querySelector('.hero-animate-5').style.opacity = '1';
+                document.querySelector('.hero-animate-5').style.transform = 'translateY(0)';
+            }, 1400);
+        });
+
+        // ===== VIDEO / ẢNH TRÁI ĐẤT ĐIỀU KHIỂN BẰNG SCROLL =====
+        const earthVideo = document.getElementById('earthVideo');
+        const earthImage = document.getElementById('earthImage');
+        let videoReady = false;
+        let ticking = false;
+        let isVideoMode = true; // true = video, false = ảnh
+
+        // Đợi video load xong metadata
+        earthVideo.addEventListener('loadedmetadata', function() {
+            videoReady = true;
+        });
+
+        earthVideo.addEventListener('error', function() {
+            console.log('Video không load được');
+        });
+
+        // Hàm xử lý scroll cho cả video và ảnh
+        function handleScroll() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+            
+            if (isVideoMode) {
+                // Chế độ video - quay nhanh gấp 3 lần
+                if (videoReady && earthVideo.duration) {
+                    const speed = 3;
+                    const loopProgress = (scrollPercent * speed) % 1.0;
+                    const finalProgress = loopProgress < 0 ? loopProgress + 1.0 : loopProgress;
+                    earthVideo.currentTime = finalProgress * earthVideo.duration;
+                }
+            } else {
+                // Chế độ ảnh - xoay ảnh
+                const rotation = scrollPercent * 1080; // 3 vòng
+                earthImage.style.transform = 'rotate(' + rotation + 'deg)';
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // ===== CHUYỂN ĐỔI VIDEO <-> ẢNH =====
+        function toggleMedia() {
+            isVideoMode = !isVideoMode;
+            
+            if (isVideoMode) {
+                // Sang video
+                earthVideo.style.display = 'block';
+                earthImage.style.display = 'none';
+                // Reset ảnh
+                earthImage.style.transform = 'rotate(0deg)';
+            } else {
+                // Sang ảnh
+                earthVideo.style.display = 'none';
+                earthImage.style.display = 'block';
+                // Reset video về đầu
+                if (videoReady) {
+                    earthVideo.currentTime = 0;
+                }
+                // Xoá transform cũ
+                handleScroll();
+            }
+        }
+
+        // ===== NÚT ĐIỀU KHIỂN =====
+        const controlHtml = `
+            <div style="position:fixed; bottom:20px; right:20px; z-index:999; display:flex; gap:8px; align-items:center;">
+                <button onclick="document.body.style.background='#f8faf8'" title="Nền trắng" style="width:36px;height:36px;border-radius:50%;border:2px solid #ccc;background:#f8faf8;cursor:pointer;"></button>
+                <button onclick="document.body.style.background='#E8F5E9'" title="Nền xanh" style="width:36px;height:36px;border-radius:50%;border:2px solid #2E7D32;background:#E8F5E9;cursor:pointer;"></button>
+                <button onclick="toggleMedia()" title="Chuyển đổi Video / Ảnh" style="width:36px;height:36px;border-radius:50%;border:2px solid #2E7D32;background:white;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">
+                    🖼️
+                </button>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', controlHtml);
+    </script>
+
+</body>
+
+</html>

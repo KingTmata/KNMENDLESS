@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản đồ điểm thu gom - GreenMap AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🌱 <span>GreenMap AI</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="map.html">Điểm thu gom</a></li>
+                <li><a href="phanloai.html">Phân loại rác</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="kienthuc.html">Kiến thức</a></li>
+            </ul>
+
+            <a href="map.html" class="btn">Tra cứu ngay</a>
+
+        </nav>
+    </header>
+
+    <!-- ===== MAP ===== -->
+    <section class="map-section">
+
+        <h2>Tìm điểm thu gom gần bạn</h2>
+
+        <p>
+            GreenMap AI hiển thị các điểm thu gom rác tái chế
+            giúp bạn dễ dàng tìm địa điểm gần nhất.
+        </p>
+
+        <div id="map"></div>
+
+    </section>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
