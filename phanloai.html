@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMap AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🌱 <span>GreenMap AI</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="map.html">Điểm thu gom</a></li>
+                <li><a href="phanloai.html">Phân loại rác</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+<li><a href="kienthuc.html">Kiến thức</a></li>
+            </ul>
+
+            <a href="map.html" class="btn">Tra cứu ngay</a>
+
+        </nav>
+    </header>
+<section class="classify">
+
+    <h1>♻️ Phân loại rác bằng AI</h1>
+
+    <p>Nhập tên vật phẩm để biết cách xử lý.</p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="wasteInput"
+            placeholder="Ví dụ: chai nhựa, pin, lon coca..."
+            
+        >
+
+        <button class="search-btn" onclick="classifyWaste()">
+            Tra cứu
+        </button>
+
+    </div>
+
+    <div id="suggestions"></div>
+
+    <div id="result" style="display:none;"></div>
+
+    <!-- Random Fact về rác thải -->
+    <div class="daily-fact" id="dailyFact">
+        <div class="daily-fact-header">
+            <span class="daily-fact-icon">💡</span>
+            <span class="daily-fact-title">Sự thật về rác thải</span>
+            <button class="daily-fact-refresh" onclick="showRandomFact()" title="Xem fact khác">
+                <i class="fa-solid fa-shuffle"></i>
+            </button>
+        </div>
+        <div class="daily-fact-content" id="factContent">
+            Đang tải...
+        </div>
+    </div>
+
+</section>
+
+    <script src="js/classify.js"></script>
+
+</body>
+
+</html>

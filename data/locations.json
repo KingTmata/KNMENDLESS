@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Việt Nam Tái Chế",
+    "address": "Hà Nội",
+    "time": "Liên hệ trước để xác nhận thời gian",
+    "items": "Máy tính, điện thoại, máy in, pin lithium, thiết bị công nghệ cũ",
+    "lat": 21.0300,
+    "lng": 105.8510,
+    "verified": false,
+    "source": "Facebook post (needs confirmation)"
+  },
+  {
+    "name": "URENCO - Hoàn Kiếm",
+    "address": "Số 8 Phan Huy Chú",
+    "time": "Sáng Thứ 7",
+    "items": "Đổi rác lấy quà",
+    "lat": 21.0205,
+    "lng": 105.8576,
+    "verified": true
+  },
+  {
+    "name": "URENCO - Ba Đình",
+    "address": "282 Kim Mã",
+    "time": "-",
+    "items": "Đổi rác lấy quà",
+    "lat": 21.0318,
+    "lng": 105.8185,
+    "verified": true
+  },
+  {
+    "name": "URENCO - Đống Đa",
+    "address": "59C Hoàng Cầu",
+    "time": "-",
+    "items": "Đổi rác lấy quà",
+    "lat": 21.0132,
+    "lng": 105.8235,
+    "verified": true
+  },
+  {
+    "name": "URENCO - Hai Bà Trưng",
+    "address": "Điểm truyền tải Vân Đồn (gần cây xăng Lương Yên)",
+    "time": "-",
+    "items": "Rác tái chế",
+    "lat": 21.0110,
+    "lng": 105.8620,
+    "verified": true
+  },
+  {
+    "name": "Lagom MRF",
+    "address": "277 Đào Cam Mộc, Việt Hùng, Đông Anh",
+    "time": "-",
+    "items": "Rác tái chế",
+    "lat": 21.1424,
+    "lng": 105.8669,
+    "verified": true
+  },
+  {
+    "name": "Điểm thu gom tổng hợp GreenMap - Đống Đa",
+    "address": "Khu vực Đống Đa, Hà Nội",
+    "time": "Theo thông báo điểm thu gom",
+    "items": "Vỏ hộp, nilon, khay xốp, pin cũ",
+    "lat": 21.0120,
+    "lng": 105.8280,
+    "verified": false,
+    "note": "Local community collection - verify schedule"
+  },
+  {
+    "name": "Chuỗi bán lẻ nhận pin cũ (ví dụ: siêu thị) - mẫu",
+    "address": "Nhiều chi nhánh tại Hà Nội",
+    "time": "Theo chuỗi cửa hàng",
+    "items": "Pin cũ, vỏ hộp nhỏ",
+    "lat": 21.0280,
+    "lng": 105.8500,
+    "verified": false,
+    "note": "Please confirm which retail chains accept battery recycling in 2026"
+  },
+  {
+    "name": "Điểm tiếp nhận thiết bị điện tử (mẫu) - cửa hàng đổi trả",
+    "address": "Hà Nội",
+    "time": "Theo cửa hàng",
+    "items": "Điện thoại, laptop cũ",
+    "lat": 21.0355,
+    "lng": 105.8460,
+    "verified": false,
+    "note": "Retail trade-in programs vary by brand"
+  }
+  ,
+  {
+    "name": "Green Life - Điểm thu gom túi/bao bì",
+    "address": "199 Đại La, Hai Bà Trưng, Hà Nội",
+    "phone": "0326065097",
+    "time": "8:30-12:00 & 14:30-19:00 (hàng ngày)",
+    "items": "Túi giấy, túi nilon cũ sạch (dùng tái sử dụng)",
+    "lat": 21.0138,
+    "lng": 105.8542,
+    "verified": false,
+    "source": "user-provided"
+  },
+  {
+    "name": "Nước khoáng tre Balala - Điểm thu gom",
+    "address": "Số 20/202/12 Cổ Linh, Long Biên",
+    "phone": "0987570455",
+    "time": "Mở cửa cả ngày (liên hệ trước nếu gửi buổi tối)",
+    "items": "Rác khó tái chế, bao bì, nilon, vỏ hộp sữa, khay xốp, đồ nhựa 1 lần, thủy tinh, thiết bị điện tử, quần áo, pin cũ (tối đa 20 viên)",
+    "lat": 21.0232,
+    "lng": 105.9015,
+    "verified": true,
+    "source": "user-provided / existing"
+  },
+  {
+    "name": "Cánh Sen Hồng - Thu hộp sữa và pin",
+    "address": "42 Trần Điền, Hoàng Mai",
+    "time": "Thứ 2: 14:00-18:30; Thứ 3-7: 08:30-17:30",
+    "items": "Vỏ hộp sữa, pin cũ (tối đa 20 viên)",
+    "lat": 20.9885,
+    "lng": 105.8368,
+    "verified": true,
+    "source": "user-provided / existing"
+  },
+  {
+    "name": "Điểm thu hộp sữa - Trần Hòa, Định Công",
+    "address": "Số 33 Trần Hòa, Định Công, Hà Nội",
+    "phone": "0979393506",
+    "time": "Liên hệ trước",
+    "items": "Vỏ hộp sữa",
+    "lat": 21.0048,
+    "lng": 105.8489,
+    "verified": false,
+    "source": "user-provided"
+  },
+  {
+    "name": "Điểm thu hộp sữa - Tô Vĩnh Diện",
+    "address": "Số 22, ngõ 86 Tô Vĩnh Diện, Khương Trung, Thanh Xuân",
+    "time": "Liên hệ trước",
+    "items": "Vỏ hộp sữa",
+    "lat": 21.0026,
+    "lng": 105.8296,
+    "verified": false,
+    "source": "user-provided"
+  },
+  {
+    "name": "Green Life - Trụ sở (thu hộp, dầu ăn, đóng hàng)",
+    "address": "P306 cầu thang 2, nhà A3, ngõ 128C Đại La, Hai Bà Trưng",
+    "phone": "0398229633",
+    "time": "08:00-19:30 (hàng ngày)",
+    "items": "Vỏ hộp sữa, dầu ăn thừa, đồ đóng hàng online (giấy, bìa, chai lọ, bọc chống sốc cũ sạch)",
+    "lat": 21.0135,
+    "lng": 105.8536,
+    "verified": true,
+    "source": "user-provided"
+  },
+  {
+    "name": "Phố Sách Hà Nội - Đổi rác lấy cây (sự kiện)",
+    "address": "Phố Sách Hà Nội, Hoàn Kiếm",
+    "phone": "0398229633",
+    "time": "08:00-17:00 (sự kiện: Thứ 6 cuối cùng của mỗi tháng)",
+    "items": "Bao bì nhựa, giấy, kim loại, vỏ hộp sữa, dầu ăn thừa (đổi lấy cây/sản phẩm)",
+    "lat": 21.0280,
+    "lng": 105.8460,
+    "verified": false,
+    "note": "Sự kiện định kỳ — kiểm tra lịch trước khi đi",
+    "source": "user-provided"
+  }
+]

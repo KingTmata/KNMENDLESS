@@ -1,0 +1,914 @@
+/* ==========================================================================
+   GREENMAP AI - KIENTHUC.CSS (Trang Kiến Thức & Tin Tức Môi Trường)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2E7D32;
+    --primary-hover: #1B5E20;
+    --primary-light: #E8F5E9;
+    --text-main: #2C3E50;
+    --text-muted: #7F8C8D;
+    --bg-light: #F4F9F4;
+    --card-shadow: 0 12px 30px rgba(46, 125, 50, 0.08);
+    --border-radius: 16px;
+    --transition-speed: 0.3s;
+}
+
+/* Reset font chữ Outfit sang trọng */
+body, button, input, select {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+/* ===== HERO SECTION ===== */
+.news-hero {
+    background: linear-gradient(135deg, #2E7D32 0%, #114B15 100%);
+    color: white;
+    padding: 80px 10%;
+    text-align: center;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(17, 75, 21, 0.15);
+}
+
+.news-hero h1 {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.news-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===== CHỨC NĂNG TÌM KIẾM VÀ BỘ LỌC ===== */
+.filter-search-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Ô tìm kiếm */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border-radius: 30px;
+    border: 2px solid #E2E8F0;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+    transition: all var(--transition-speed) ease;
+}
+
+.search-wrapper input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.15);
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+/* Bộ lọc danh mục */
+.categories-filter {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid #E2E8F0;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+/* ===== MAIN CONTENT LAYOUT ===== */
+.news-layout {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    display: grid;
+    grid-template-columns: 8fr 3fr;
+    gap: 40px;
+}
+
+/* ===== DỰ PHÒNG KHÔNG TÌM THẤY ===== */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.no-results i {
+    font-size: 48px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+/* ===== LƯỚI TIN TỨC (NEWS GRID) ===== */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(46, 125, 50, 0.12);
+}
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.news-card:hover .card-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.card-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Màu sắc của thẻ danh mục */
+.card-tag.meo-tai-che { background-color: #E67E22; }
+.card-tag.song-xanh { background-color: #2ECC71; }
+.card-tag.tin-tuc { background-color: #3498DB; }
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-summary {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-btn {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+}
+
+.news-card:hover .card-btn {
+    gap: 12px;
+}
+
+/* ===== SIDEBAR (MẸO XANH HÀNG NGÀY) ===== */
+.news-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-widget {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(46, 125, 50, 0.08);
+}
+
+.tip-widget {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F1F9F2 100%);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-widget::after {
+    content: "🌱";
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    font-size: 72px;
+    opacity: 0.06;
+}
+
+.widget-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px dashed rgba(46, 125, 50, 0.15);
+    padding-bottom: 10px;
+}
+
+.tip-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    min-height: 100px;
+    height: 100px;
+    overflow-y: auto;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tip-btn {
+    background: transparent;
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    transition: all var(--transition-speed) ease;
+}
+
+.tip-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tip-btn:hover i {
+    transform: rotate(180deg);
+}
+
+.tip-btn i {
+    transition: transform var(--transition-speed) ease;
+}
+
+/* ===== CHI TIẾT BÀI VIẾT (MODAL POPUP) ===== */
+.article-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.article-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    border-radius: 24px;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transform: translateY(40px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.article-modal.show .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+/* Nút Đóng Modal */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-main);
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover {
+    background: #F2F2F2;
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* Banner Hình Ảnh trong Modal */
+.modal-banner {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.modal-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Vùng Nội Dung Modal */
+.modal-detail-wrapper {
+    padding: 40px;
+}
+
+.modal-meta-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-meta-wrapper .tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+}
+
+.modal-meta-wrapper .tag.meo-tai-che { background-color: #E67E22; }
+.modal-meta-wrapper .tag.song-xanh { background-color: #2ECC71; }
+.modal-meta-wrapper .tag.tin-tuc { background-color: #3498DB; }
+
+.modal-meta-wrapper span:last-child {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 25px;
+    color: var(--text-main);
+}
+
+.modal-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4A5568;
+}
+
+.modal-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px 0 15px 0;
+    color: var(--text-main);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 12px;
+}
+
+.modal-body p {
+    margin-bottom: 20px;
+}
+
+.modal-body ul, .modal-body ol {
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.modal-body li {
+    margin-bottom: 10px;
+}
+
+/* ===== BUTTON "XEM THÊM" ===== */
+.load-more-wrapper{
+    grid-column:1/-1;
+    text-align:center;
+    padding:30px 0 10px;
+}
+
+.load-more-btn{
+    background:#2E7D32;
+    color:white;
+    border:none;
+    padding:14px 40px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.load-more-btn:hover{
+    background:#1B5E20;
+    transform:scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .news-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .news-sidebar {
+        order: -1; /* Đưa mẹo xanh lên trên ở màn hình nhỏ */
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    .news-hero {
+        padding: 60px 5%;
+    }
+    .news-hero h1 {
+        font-size: 34px;
+    }
+    .modal-detail-wrapper {
+        padding: 25px;
+    }
+    .modal-title {
+        font-size: 22px;
+    }
+    .modal-banner {
+        height: 220px;
+    }
+}
+
+/* ===== LOADING STATE ===== */
+.loading-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(46, 125, 50, 0.1);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-wrapper p {
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   WIDGETS BỔ SUNG: AQI & THỐNG KÊ MÔI TRƯỜNG
+   ========================================================================== */
+
+/* --- Cấu trúc chung của Widget AQI --- */
+.aqi-widget {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+}
+
+.aqi-tabs {
+    display: flex;
+    justify-content: space-between;
+    background: #F1F5F9;
+    padding: 4px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.aqi-tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.aqi-tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.aqi-tab-btn.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Vùng hiển thị vòng tròn AQI --- */
+.aqi-display-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    background: #FAFAFA;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #F1F5F9;
+}
+
+.aqi-circle {
+    min-width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+.aqi-circle span:first-child {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.aqi-circle .aqi-label-text {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+.aqi-info {
+    flex: 1;
+}
+
+.aqi-status {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.aqi-advice {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #475569;
+}
+
+/* --- Bảng chi tiết bụi mịn --- */
+.aqi-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    border-top: 1px dashed #E2E8F0;
+    padding-top: 16px;
+}
+
+.aqi-detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.aqi-detail-item > span:first-child {
+    font-weight: 600;
+    color: #475569;
+    width: 60px;
+}
+
+.aqi-detail-item > span:last-child {
+    font-weight: 500;
+    color: #64748B;
+    text-align: right;
+    width: 90px;
+}
+
+.aqi-progress-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: #E2E8F0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 12px;
+}
+
+.aqi-progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aqi-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #94A3B8;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 12px;
+}
+
+/* --- Bảng màu chất lượng không khí chuẩn quốc tế --- */
+.aqi-good { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+.aqi-good-text { color: #059669; }
+.aqi-good-bg { background: #10B981; }
+
+.aqi-moderate { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+.aqi-moderate-text { color: #D97706; }
+.aqi-moderate-bg { background: #F59E0B; }
+
+.aqi-unhealthy-sensitive { background: linear-gradient(135deg, #F97316 0%, #EA580C 100%); }
+.aqi-unhealthy-sensitive-text { color: #EA580C; }
+.aqi-unhealthy-sensitive-bg { background: #F97316; }
+
+.aqi-unhealthy { background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); }
+.aqi-unhealthy-text { color: #DC2626; }
+.aqi-unhealthy-bg { background: #EF4444; }
+
+.aqi-very-unhealthy { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); }
+.aqi-very-unhealthy-text { color: #7C3AED; }
+.aqi-very-unhealthy-bg { background: #8B5CF6; }
+
+.aqi-hazardous { background: linear-gradient(135deg, #7F1D1D 0%, #450A0A 100%); }
+.aqi-hazardous-text { color: #7F1D1D; }
+.aqi-hazardous-bg { background: #7F1D1D; }
+
+
+/* --- Cấu trúc Widget Thống kê & Phân hủy --- */
+.stats-widget {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+}
+
+.stat-progress-section {
+    background: #FAFDFB;
+    border: 1px solid #E8F5E9;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+.stat-text-wrapper span {
+    font-weight: 500;
+}
+
+.stat-text-wrapper strong {
+    font-weight: 700;
+    color: #166534;
+}
+
+.recycle-bar-bg {
+    height: 12px;
+    background: #E2E8F0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.recycle-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+    border-radius: 6px;
+}
+
+.stat-subtext {
+    display: block;
+    font-size: 11.5px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+.sub-widget-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 20px 0 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.decomposition-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.decomp-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.decomp-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+}
+
+.decomp-info span:first-child {
+    font-weight: 500;
+    color: #374151;
+}
+
+.decomp-time {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.decomp-bar-bg {
+    height: 6px;
+    background: #F1F5F9;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.decomp-bar {
+    height: 100%;
+    border-radius: 3px;
+}
+
+/* Các màu chỉ định mức nguy hại về thời gian phân hủy */
+.danger-bar { background: linear-gradient(90deg, #DC2626 0%, #991B1B 100%); }
+.warning-bar { background: linear-gradient(90deg, #EA580C 0%, #C2410C 100%); }
+.info-bar { background: linear-gradient(90deg, #D97706 0%, #B45309 100%); }
+.safe-bar { background: linear-gradient(90deg, #10B981 0%, #047857 100%); }
+
+.font-red { color: #B91C1C; }
+.font-orange { color: #C2410C; }
+.font-yellow { color: #B45309; }
+.font-green { color: #047857; }
+
+/* Responsive bổ sung cho Widget AQI trên mobile */
+@media (max-width: 480px) {
+    .aqi-tabs {
+        gap: 2px;
+    }
+    .aqi-tab-btn {
+        font-size: 12px;
+        padding: 6px;
+    }
+    .aqi-circle {
+        min-width: 75px;
+        height: 75px;
+    }
+    .aqi-circle span:first-child {
+        font-size: 24px;
+    }
+    .aqi-status {
+        font-size: 16px;
+    }
+}

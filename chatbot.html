@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenBot AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🌱 <span>GreenMap AI</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="map.html">Điểm thu gom</a></li>
+            <li><a href="phanloai.html">Phân loại rác</a></li>
+            <li><a href="chatbot.html">AI Chatbot</a></li>
+            <li><a href="kienthuc.html">Kiến thức</a></li>
+        </ul>
+
+            <a href="map.html" class="btn">Tra cứu ngay</a>
+
+    </nav>
+
+</header>
+
+<section class="chat-page">
+
+    <!-- INPUT CHỌN ẢNH (ẩn) -->
+    <input type="file" id="imageInput" accept="image/*" hidden>
+
+    <!-- INPUT CAMERA (ẩn) -->
+    <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+
+    <!-- KHUNG CHAT (bọc cả preview để đè lên) -->
+    <div class="chat-wrapper">
+        <div class="chat-box" id="chatBox">
+
+            <div class="bot-message">
+
+                <img src="assets/images/chatbot.png">
+
+                <div class="message">
+
+                    Xin chào 👋<br><br>
+
+                    Mình là <b>Meo Meo Bot</b>.<br><br>
+
+                    Bạn có thể:
+                    <br>♻️ Hỏi về phân loại rác
+                    <br>📍 Tìm điểm thu gom
+                    <br>📷 Gửi ảnh để AI nhận diện rác
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Preview ảnh đè lên chat (float overlay) -->
+        <div class="preview-area" id="previewArea" style="display:none;">
+            <div class="preview-item">
+                <img id="previewThumb" src="" alt="preview">
+                <span class="preview-name" id="previewName">image.jpg</span>
+                <button class="preview-remove" onclick="removeImage()" title="Xoá ảnh">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- KHU VỰC INPUT -->
+    <div class="input-area">
+
+        <div class="input-row">
+
+            <!-- Nút đính kèm (📎) - mở popup -->
+            <div class="attach-wrapper">
+                <button class="input-btn attach-btn" onclick="toggleAttachPopup()">
+                    <i class="fa-solid fa-paperclip"></i>
+                </button>
+
+                <!-- Popup 2 nút hình vuông nhỏ -->
+                <div class="attach-popup" id="attachPopup">
+                    <button class="popup-square" onclick="selectUpload()" title="Tải lên">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </button>
+                    <button class="popup-square" onclick="selectCamera()" title="Chụp ảnh">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ô nhập -->
+            <input
+                id="userInput"
+                type="text"
+                class="input-field"
+                placeholder="Nhập câu hỏi...">
+
+            <!-- Nút gửi -->
+            <button class="input-btn" onclick="sendMessage()">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="js/config.js"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+
+</html>

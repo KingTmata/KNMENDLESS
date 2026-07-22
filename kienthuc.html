@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiến Thức & Tin Tức Môi Trường - GreenMap AI</title>
+
+    <!-- CSS chính và CSS cho trang Kiến thức -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kienthuc.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR (Đồng bộ) ===== -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🌱 <span>GreenMap AI</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="map.html">Điểm thu gom</a></li>
+                <li><a href="phanloai.html">Phân loại rác</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="kienthuc.html">Kiến thức</a></li>
+            </ul>
+
+            <a href="map.html" class="btn">Tra cứu ngay</a>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="news-hero">
+        <h1>Kiến Thức & Tin Tức Môi Trường</h1>
+        <p>Cập nhật những thông tin mới nhất về bảo vệ hành tinh xanh, mẹo phân loại tái chế và các hoạt động bảo vệ môi trường cùng GreenMap AI.</p>
+    </section>
+
+    <!-- ===== TÌM KIẾM VÀ BỘ LỌC ===== -->
+    <div class="filter-search-container">
+        <!-- Ô tìm kiếm tin tức -->
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="newsSearch" placeholder="Tìm kiếm bài viết, mẹo tái chế, lối sống xanh...">
+        </div>
+
+        <!-- Bộ lọc danh mục bài viết -->
+        <div class="categories-filter">
+            <button class="filter-btn active" data-category="all">Tất cả</button>
+            <button class="filter-btn" data-category="tin-tuc">Tin tức</button>
+            <button class="filter-btn" data-category="meo-tai-che">Mẹo tái chế</button>
+            <button class="filter-btn" data-category="song-xanh">Lối sống xanh</button>
+        </div>
+    </div>
+
+    <!-- ===== BỐ CỤC CHÍNH (NEWS GRID & SIDEBAR) ===== -->
+    <main class="news-layout">
+        <!-- Lưới danh sách bài viết -->
+        <section class="articles-grid" id="articlesGrid">
+            <!-- Bài viết được render tự động từ js/kienthuc.js -->
+        </section>
+
+        <!-- Thanh bên (Sidebar) -->
+        <aside class="news-sidebar">
+            <!-- Widget AQI Thời gian thực -->
+            <div class="sidebar-widget aqi-widget">
+                <h3 class="widget-title"><i class="fa-solid fa-wind"></i> Chất lượng không khí (AQI)</h3>
+                <div class="aqi-tabs">
+                    <button class="aqi-tab-btn active" data-city="hanoi" onclick="changeAQICity('hanoi')">Hà Nội</button>
+                    <button class="aqi-tab-btn" data-city="ho chi minh" onclick="changeAQICity('ho chi minh')">TP.HCM</button>
+                    <button class="aqi-tab-btn" data-city="da nang" onclick="changeAQICity('da nang')">Đà Nẵng</button>
+                </div>
+                <div class="aqi-display-wrapper">
+                    <div id="aqiCircle" class="aqi-circle">
+                        <span id="aqiValue">--</span>
+                        <span class="aqi-label-text">AQI</span>
+                    </div>
+                    <div class="aqi-info">
+                        <div id="aqiStatus" class="aqi-status">Đang tải...</div>
+                        <div id="aqiAdvice" class="aqi-advice">Đang phân tích dữ liệu...</div>
+                    </div>
+                </div>
+                <div class="aqi-details">
+                    <div class="aqi-detail-item">
+                        <span>PM2.5</span>
+                        <div class="aqi-progress-bar-bg">
+                            <div id="pm25Bar" class="aqi-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <span id="pm25Val">-- μg/m³</span>
+                    </div>
+                    <div class="aqi-detail-item">
+                        <span>PM10</span>
+                        <div class="aqi-progress-bar-bg">
+                            <div id="pm10Bar" class="aqi-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <span id="pm10Val">-- μg/m³</span>
+                    </div>
+                </div>
+                <div class="aqi-footer">
+                    <span>Nguồn: WAQI Project & Monitoring Stations</span>
+                    <span id="aqiTime">Cập nhật: --</span>
+                </div>
+            </div>
+
+            <!-- Mẹo sống xanh -->
+            <div class="sidebar-widget tip-widget">
+                <h3 class="widget-title"><i class="fa-solid fa-leaf"></i> Mẹo xanh hôm nay</h3>
+                <div class="tip-content" id="tipText">Đang tải mẹo sống xanh...</div>
+                <button class="tip-btn" onclick="changeTip()">
+                    <i class="fa-solid fa-rotate"></i> Xem mẹo khác
+                </button>
+            </div>
+
+            <!-- Widget Thống kê môi trường & phân hủy -->
+            <div class="sidebar-widget stats-widget">
+                <h3 class="widget-title"><i class="fa-solid fa-chart-pie"></i> Con số môi trường VN</h3>
+                
+                <div class="stat-progress-section">
+                    <div class="stat-text-wrapper">
+                        <span>Rác thải nhựa phát sinh hàng ngày</span>
+                        <strong>~8,000 tấn</strong>
+                    </div>
+                    <div class="stat-text-wrapper">
+                        <span>Tỷ lệ rác thải nhựa được tái chế</span>
+                        <strong>Chỉ 10%</strong>
+                    </div>
+                    <div class="stat-progress-bar-bg recycle-bar-bg">
+                        <div class="stat-progress-bar recycle-bar" style="width: 10%"></div>
+                    </div>
+                    <span class="stat-subtext">90% còn lại bị chôn lấp, đốt hoặc thải thẳng ra môi trường.</span>
+                </div>
+
+                <h4 class="sub-widget-title"><i class="fa-solid fa-hourglass-half"></i> Vòng đời phân hủy rác thải</h4>
+                <div class="decomposition-list">
+                    <div class="decomp-item">
+                        <div class="decomp-info">
+                            <span>📦 Hộp xốp đựng thức ăn</span>
+                            <span class="decomp-time font-red">Hàng triệu năm</span>
+                        </div>
+                        <div class="decomp-bar-bg"><div class="decomp-bar danger-bar" style="width: 100%"></div></div>
+                    </div>
+                    <div class="decomp-item">
+                        <div class="decomp-info">
+                            <span>🛍️ Túi nilon sinh hoạt</span>
+                            <span class="decomp-time font-orange">500 năm</span>
+                        </div>
+                        <div class="decomp-bar-bg"><div class="decomp-bar warning-bar" style="width: 80%"></div></div>
+                    </div>
+                    <div class="decomp-item">
+                        <div class="decomp-info">
+                            <span>🧴 Chai nhựa PET</span>
+                            <span class="decomp-time font-orange">450 năm</span>
+                        </div>
+                        <div class="decomp-bar-bg"><div class="decomp-bar warning-bar" style="width: 75%"></div></div>
+                    </div>
+                    <div class="decomp-item">
+                        <div class="decomp-info">
+                            <span>🥫 Lon nhôm nước ngọt</span>
+                            <span class="decomp-time font-yellow">200 năm</span>
+                        </div>
+                        <div class="decomp-bar-bg"><div class="decomp-bar info-bar" style="width: 50%"></div></div>
+                    </div>
+                    <div class="decomp-item">
+                        <div class="decomp-info">
+                            <span>📄 Sách báo, giấy viết</span>
+                            <span class="decomp-time font-green">2 - 5 tháng</span>
+                        </div>
+                        <div class="decomp-bar-bg"><div class="decomp-bar safe-bar" style="width: 5%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- ===== MODAL CHI TIẾT BÀI VIẾT ===== -->
+    <div class="article-modal" id="articleModal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="modal-banner">
+                <img id="modalImg" src="" alt="Hình minh họa bài viết">
+            </div>
+            
+            <div class="modal-detail-wrapper">
+                <div class="modal-meta-wrapper" id="modalMeta">
+                    <!-- Render tự động bởi Javascript -->
+                </div>
+                <h2 class="modal-title" id="modalTitle">Tiêu đề bài viết</h2>
+                <div class="modal-body" id="modalBody">
+                    <!-- Nội dung bài viết chi tiết -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script điều khiển -->
+    <script src="js/kienthuc.js"></script>
+
+</body>
+
+</html>
