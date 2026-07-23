@@ -289,9 +289,9 @@ async function loadLiveNews() {
     }
 
     const feeds = [
-        "https://moitruong.net.vn/feed/",
-        "https://www.vietnamplus.vn/rss/moi-truong.rss",
-        "https://nongnghiep.vn/moi-truong.rss"
+        "https://nature.org.vn/vn/?gad_source=1&gad_campaignid=19781835244&gbraid=0AAAAADeDw6IOu72roIxx6w36YQZJPjHmS&gclid=Cj0KCQjw94bTBhDQARIsAN3vv0xWyKJUzbQ_xLgHDR1TA54u2RB2r44x58P9vA3uoXvUtj_rVJqPx5AaAooSEALw_wcB",
+        "https://nongnghiepmoitruong.vn/rss",
+        "https://moitruong.net.vn/rss",
     ];
 
     const fetchPromises = feeds.map(feed => {
